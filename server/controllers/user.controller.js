@@ -4,26 +4,29 @@ const firebase = require("../db.js");
 const User = require("../models/user.model");
 const firestore = firebase.firestore();
 
-const addUser = async (req, res, next) => {
+const signup = async (req, res, next) => {
   try {
-    console.log("req.body:", req.body);
-    const data = req.body;
-    const user = await firestore
-      .collection("users")
-      .add(data)
-      .catch((err) => {
-        console.log(err);
-      });
+    const user = await firebase.auth().createUser({
+      email: req.body.email,
+      password: req.body.password,
+      disabled: false,
+      emailVerified: false,
+    });
     res.send({
       status: 200,
-      message: "Record saved successfully.",
+      message: "User signed up successfully.",
       data: user,
     });
   } catch (err) {
+    console.error(err);
     res.status(400).send(err.message);
   }
 };
 
+const signin = async (req, res, next) => {
+};
+
 module.exports = {
-  addUser,
+  signup,
+  signin,
 };

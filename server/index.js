@@ -10,8 +10,9 @@ app.use(express.json());
 app.use(cors());
 app.use(bodyParser.json());
 
-app.use("/api/users/", userRoutes.routes);
+app.use("/api/user/", userRoutes.routes);
 
-app.listen(config.port, () =>
-  console.log("App is listening on url" + config.url)
+const PORT = config.port || 8080;
+app.listen(PORT, () =>
+  console.log("App is listening on url http://localhost:" + PORT)
 );
