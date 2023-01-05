@@ -77,9 +77,7 @@ export default function Login() {
               <p className="auth-or">or</p>
             </div>
 
-            <div>
-              SIGN IN WITH GOOGLE should be added
-            </div>
+            <div>SIGN IN WITH GOOGLE should be added</div>
           </div>
         </div>
       </div>
@@ -176,6 +174,7 @@ const Wrapper = styled.div`
   }
 
   .auth-or {
+    margin-top: 30px;
     display: flex;
     align-items: center;
     margin-bottom: 1.25rem;
