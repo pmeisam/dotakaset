@@ -49,6 +49,7 @@ export default function Login() {
             </Link>
           </p>
 
+          {error && <Alert variant="danger">{error}</Alert>}
           <form onSubmit={handleSubmit}>
             <input
               className="input"
@@ -64,7 +65,7 @@ export default function Login() {
               required
               placeholder="Password"
             />
-            <button className="submit-btn" type="submit">
+            <button disabled={loading} className="submit-btn" type="submit">
               Login
             </button>
           </form>
@@ -72,6 +73,13 @@ export default function Login() {
             <Link className="forgot-pass-link" to="/forgot-password">
               Forgot your password?
             </Link>
+            <div>
+              <p className="auth-or">or</p>
+            </div>
+
+            <div>
+              SIGN IN WITH GOOGLE should be added
+            </div>
           </div>
         </div>
       </div>
@@ -154,7 +162,7 @@ const Wrapper = styled.div`
   .forgot-pass-link {
     color: gray;
     font-size: 13px;
-    text-decoration: none;
+    text-decoration: underline;
   }
 
   .sign-up {
@@ -165,6 +173,30 @@ const Wrapper = styled.div`
   .sign-up-link {
     color: #5934e8;
     text-decoration: none;
+  }
+
+  .auth-or {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.25rem;
+    color: #636363;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    font-size: 12px;
+  }
+
+  .auth-or:before {
+    content: "";
+    flex-grow: 1;
+    border-bottom: 1px solid #636363;
+    margin: 10px;
+  }
+
+  .auth-or:after {
+    content: "";
+    flex-grow: 1;
+    border-bottom: 1px solid #636363;
+    margin: 10px;
   }
 
   @media screen and (max-width: 900px) {
