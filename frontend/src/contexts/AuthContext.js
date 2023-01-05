@@ -30,8 +30,8 @@ export function AuthProvider({ children }) {
         console.log("Email sent.");
       })
       .catch((error) => {
-        var errorCode = error.code;
-        var errorMessage = error.message;
+        // var errorCode = error.code;
+        // var errorMessage = error.message;
         console.log(error);
       });
   }
