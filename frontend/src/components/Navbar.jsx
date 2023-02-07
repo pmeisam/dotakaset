@@ -47,7 +47,13 @@ export default function Navbar() {
           >
             Support
           </NavLink>
-          <NavLink className="dashboard-button" to="/dashboard">
+          <NavLink
+            className="dashboard-button"
+            style={({ isActive }) =>
+              isActive ? { color: "white", background: "black" } : undefined
+            }
+            to="/dashboard"
+          >
             MY DASHBOARD
           </NavLink>
         </LinksWrapper>
@@ -130,7 +136,7 @@ const Wrapper = styled.header`
 
   .open-btn {
     background-color: transparent;
-    color: white;
+    color: #959595;
     border: 0;
     margin: 15px;
   }
