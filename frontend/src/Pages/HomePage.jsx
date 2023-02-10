@@ -33,8 +33,8 @@ export default function HomePage() {
           </div>
         </div>
         <video
-          playsinline="playsinline"
-          autoplay="autoplay"
+          playsInline="playsinline"
+          autoPlay="autoplay"
           muted="muted"
           loop="loop"
           src="https://media.graphassets.com/68LSCpdkR2SAlpVWwxal"

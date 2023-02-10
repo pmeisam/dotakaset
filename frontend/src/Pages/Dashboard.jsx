@@ -1,12 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useAuth } from "../contexts/AuthContext";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 export default function Dashboard() {
   const [error, setError] = useState("");
   const { currentUser, logout } = useAuth();
   const navigate = useNavigate();
+
+  
 
   async function handleLogout() {
     setError("");
@@ -19,9 +21,17 @@ export default function Dashboard() {
     }
   }
 
+  useEffect(() => {
+    if (!currentUser.emailVerified) {
+      navigate('/verifyEmail')
+    }
+  }, [])
   return (
+    
     <DashboardWrapper>
       <h1>Hello {currentUser.email}</h1>
+      <button onClick={handleLogout}>Log out</button>
+      <Link to="/subscriptions">Update Subscription</Link>
     </DashboardWrapper>
   );
 }

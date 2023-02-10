@@ -149,6 +149,7 @@ const Wrapper = styled.header`
 
   @media screen and (max-width: 1150px) {
     background: transparent;
+    height: 0;
     nav {
       height: 100vh;
       width: 100vw;
