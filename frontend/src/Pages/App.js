@@ -1,8 +1,13 @@
-import React, { useContext, useState } from "react";
-import { AuthProvider } from "../contexts/AuthContext";
+import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+// Auth Context
+import { AuthProvider, useAuth } from "../contexts/AuthContext";
+
+// Pages
 import Signup from "../components/Signup";
 import Dashboard from "./Dashboard";
+import CreateUser from "./CreateUser";
 import Login from "../components/Login";
 import PrivateRoute from "../components/PrivateRoute";
 import ForgotPassword from "../components/ForgotPassword";
@@ -12,17 +17,18 @@ import HomePage from "./HomePage";
 import Footer from "../components/Footer";
 import Account from "../components/Account";
 import Subscriptions from "./Subscriptions";
-import { useAuth } from "../contexts/AuthContext";
 import VerifyEmail from "../components/VerifyEmail";
+import TestPage from "./TestPage";
 
 function App() {
   const { currentUser } = useAuth();
+
   if (currentUser) {
-    console.log(currentUser)
+    console.log(`${currentUser.email} logged in successfully!`);
   } else {
-    console.log("No user logged in!")
+    console.log("No user logged in!");
   }
-  
+
   return (
     <>
       <Router>
@@ -30,8 +36,12 @@ function App() {
           <Navbar />
           <Routes>
             <Route exact path="/" element={<HomePage />} />
+            <Route exact path="/testpage" element={<TestPage />} />
             <Route exact path="/dashboard" element={<PrivateRoute />}>
               <Route exact path="/dashboard" element={<Dashboard />} />
+            </Route>
+            <Route exact path="/createUser" element={<PrivateRoute />}>
+              <Route exact path="/createUser" element={<CreateUser />} />
             </Route>
             <Route exact path="/verifyEmail" element={<PrivateRoute />}>
               <Route exact path="/verifyEmail" element={<VerifyEmail />} />

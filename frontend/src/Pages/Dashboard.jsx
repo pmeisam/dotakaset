@@ -4,11 +4,9 @@ import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 export default function Dashboard() {
-  const [error, setError] = useState("");
-  const { currentUser, logout } = useAuth();
+  const { currentUser, userEntity, logout } = useAuth();
   const navigate = useNavigate();
-
-  
+  const [error, setError] = useState("");
 
   async function handleLogout() {
     setError("");
@@ -22,12 +20,17 @@ export default function Dashboard() {
   }
 
   useEffect(() => {
+    console.log(currentUser)
     if (!currentUser.emailVerified) {
-      navigate('/verifyEmail')
+      navigate("/verifyEmail");
     }
-  }, [])
+    console.log(userEntity)
+    if (!userEntity.retrieved) {
+      navigate("/createUser");
+    }
+  }, []);
+
   return (
-    
     <DashboardWrapper>
       <h1>Hello {currentUser.email}</h1>
       <button onClick={handleLogout}>Log out</button>

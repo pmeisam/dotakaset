@@ -16,6 +16,7 @@
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.0",
     "react-dom": "^18.2.0",
+    "react-paypal-button-v2": "^2.6.3",
     "react-router-dom": "^6.6.1",
     "react-scripts": "5.0.1",
     "styled-components": "^5.3.6",
@@ -44,5 +45,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "proxy": "http://localhost:5000"
 }

@@ -6,7 +6,8 @@ const usersHandler = require("../../handlers/users.handler.js");
 // delete: delete
 // get: get
 router.post("/", usersHandler.createUser);
-router.get("/", usersHandler.getUser);
+router.get("/user/:userId", usersHandler.getUser);
+router.get("/userEntity/:userEntityId", usersHandler.getUserByEntityId);
 // router.delete("/:appointmentId", appointmentsHandler.deleteAppointment);
 // router.put("/:appointmentId", appointmentsHandler.updateAppointment);
 
