@@ -20,13 +20,14 @@ export default function Dashboard() {
   }
 
   useEffect(() => {
-    console.log(currentUser)
     if (!currentUser.emailVerified) {
       navigate("/verifyEmail");
     }
-    console.log(userEntity)
     if (!userEntity.retrieved) {
       navigate("/createUser");
+    }
+    if (!currentUser.subscribed) {
+      navigate("/subscriptions");
     }
   }, []);
 

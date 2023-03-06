@@ -1,68 +1,107 @@
 import React from "react";
 import styled from "styled-components";
+import SubscriptionCard from "../components/SubscriptionCard";
 
 export default function Subscriptions() {
   return (
     <Wrapper>
-      <h1>Subscriptions and Services</h1>
-      <div className="subscriptions">
-        <h2>Subscriptions</h2>
-        <div className="card">
-          <h2>Basic Package</h2>
-          <p>
-            $10 a month to upload 5 songs a year and it will be uploaded to
-            youtube, spotify, apple music, amazon music, and pandora
-          </p>
-          <button>Choose Basic</button>
-        </div>
-        <div className="card">
-          <h2>Ultimate Package</h2>
-          <p>
-            $18 a month to upload 10 songs a year and it will be uploaded to
-            youtube, spotify, apple music, amazon music, and pandora
-          </p>
-          <button>Choose ultimate</button>
-        </div>
-        <div className="card">
-          <h2>Premium Package</h2>
-          <h3>Free</h3>
-          <p>
-            upload as many songs as you want and pay commissions based on the
-            money we make. if the viewers are less than a million the share is
-            50 50 if the viewers are over a million the share is 40 us and 60
-            percent to you if over 5 million 20 to 80 over 20 million we only
-            get 10 percent of the income
-          </p>
-          <button>Choose Premium</button>
-        </div>
-
-        <div className="services">
-          <h2>Services</h2>
-          <div className="card">
-            1- if you don't have an international payment card such as Visa,
-            Master Card, Amex etc. we can get one for you <br />
-            this is included in premium package
-            <br />
-            2- For each upload there is a 10 days pending to make sure the music
-            is not covered or copyrighted <br />
-            3- The music you upload has to be in 320 quality without a title{" "}
-            <br />
-            4- the images need to be 600 to 600 <br />
-            5- If everything goes fine we will get the copyright for you so no
-            one else could upload your music to any of the music or streaming
-            applications and websites
-          </div>
-        </div>
+      <h1 className="section-pick-plan_title">
+        Please select a plan that best fits your needs.
+      </h1>
+      <div className="plan_list_items">
+        <SubscriptionCard
+          planName="Silver"
+          price="15"
+          details="You can upload up to 5 songs annually, 
+          and have them distributed to 
+          popular streaming platforms like YouTube, Spotify, 
+          Apple Music, Amazon Music, and SoundCloud."
+          planId="P-49690677HG9807049MQBJBIY"
+        />
+        <SubscriptionCard
+          planName="Gold"
+          price="25"
+          details="You can upload up to 10 songs annually, 
+          and have them distributed to 
+          popular streaming platforms like YouTube, Spotify, 
+          Apple Music, Amazon Music, and SoundCloud."
+          planId="P-49690677HG9807049MQBJBIY"
+        />
+        <SubscriptionCard
+          planName="Platinum"
+          price="0"
+          details="Unleash your music without any limitations, hassle-free."
+          planId={null}
+        />
       </div>
+      <p className="platinum_context">
+        * The Platinum package offers a comprehensive solution for independent
+        musicians seeking to distribute their music. If you do not have an
+        international payment card such as Visa, MasterCard, or Amex, we can
+        provide one for you, ensuring a smooth and hassle-free payment process.
+        Additionally, our rigorous quality control measures require each upload
+        to undergo a 10-day pending period to ensure that the music is original
+        and not subject to copyright. Finally, our team will take care of
+        obtaining the copyright for your music, protecting your intellectual
+        property and ensuring that no one else can upload your music to any
+        music or streaming applications or websites.
+        <br />
+        We believe that our Platinum package provides a reliable and efficient
+        solution for musicians looking to distribute their music and build their
+        audience. Please do not hesitate to contact us if you have any questions
+        or would like to learn more about our services.
+      </p>
     </Wrapper>
   );
 }
 
 const Wrapper = styled.div`
-  margin-top: 130px;
-  .card {
-    border: 1px solid lightgray;
-    padding: 20px;
-    margin: 20px;
+  .section-pick-plan_title {
+    font-size: 2.5rem;
+    margin-bottom: 2.1875rem;
+    text-align: center;
+    font-family: Poppins, Helvetica, Arial, sans-serif;
+    line-height: 1.4;
+    letter-spacing: 0.15rem;
+  }
+
+  .plan_list_items {
+    display: flex;
+
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-bottom: 1.875rem;
+  }
+
+  .platinum_context {
+    width: 70%;
+    margin: 0 auto 100px auto;
+    text-align: center;
+    color: #2f2d2e;
+    font-family: Poppins, Helvetica, Arial, sans-serif;
+    letter-spacing: 0.05rem;
+  }
+
+  @media only screen and (max-width: 1020px) {
+    .platinum_context {
+      width: 90%;
+    }
+  }
+
+  @media only screen and (max-width: 900px) {
+    .plan_list_items {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  @media only screen and (max-width: 700px) {
+    .section-pick-plan_title {
+      font-size: 1.5rem;
+      width: 90%;
+      margin: 0 auto;
+      margin-bottom: 30px;
+    }
   }
 `;

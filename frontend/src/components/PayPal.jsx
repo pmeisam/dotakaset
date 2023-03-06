@@ -1,26 +1,25 @@
 import React from "react"; // rfc
-
 import PayPalBtn from "./PayPalBtn";
 
-const paypalSubscribe = (data, actions) => {
-  return actions.subscription.create({
-    plan_id: "P-49690677HG9807049MQBJBIY",
-  });
-};
-const paypalOnError = (err) => {
-  console.log("Error");
-};
-const paypalOnApprove = (data, detail) => {
-  // call the backend api to store transaction details
-  console.log("Payapl approved");
-  console.log(data.subscriptionID);
-};
+function Paypal({ amount, planId }) {
+  const paypalSubscribe = (data, actions) => {
+    return actions.subscription.create({
+      plan_id: planId,
+    });
+  };
+  const paypalOnError = (err) => {
+    console.log("Error");
+  };
+  const paypalOnApprove = (data, detail) => {
+    // call the backend api to store transaction details
+    console.log("Payapl approved");
+    console.log(data.subscriptionID);
+  };
 
-function Paypal() {
   return (
     <div className="App">
       <PayPalBtn
-        amount="10"
+        amount
         currency="USD"
         createSubscription={paypalSubscribe}
         onApprove={paypalOnApprove}
@@ -33,21 +32,6 @@ function Paypal() {
 }
 
 export default Paypal;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // export default function PayPal() {
 //   const paypal = useRef();
@@ -83,16 +67,6 @@ export default Paypal;
 //     </div>
 //   );
 // }
-
-
-
-
-
-
-
-
-
-
 
 {
   /* <div id="paypal-button-container-P-49690677HG9807049MQBJBIY"></div> */

@@ -51,7 +51,7 @@ const FooterWrapper = styled.footer`
   padding: 1.25rem 0 0;
   text-align: left;
   min-height: 250px;
-  position: fixed;
+  position: relative;
   bottom: 0;
   left: 0;
   width: 100%;

@@ -20,6 +20,7 @@ import Subscriptions from "./Subscriptions";
 import VerifyEmail from "../components/VerifyEmail";
 import TestPage from "./TestPage";
 import Upload from "./Upload";
+import Checkout from "./Checkout";
 
 function App() {
   const { currentUser } = useAuth();
@@ -39,6 +40,7 @@ function App() {
             <Route exact path="/" element={<HomePage />} />
             <Route exact path="/testpage" element={<TestPage />} />
             <Route exact path="/upload" element={<Upload />} />
+            <Route exact path="/checkout/:amount/:planId" element={<Checkout />} />
             <Route exact path="/dashboard" element={<PrivateRoute />}>
               <Route exact path="/dashboard" element={<Dashboard />} />
             </Route>
