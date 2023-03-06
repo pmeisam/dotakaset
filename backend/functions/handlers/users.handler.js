@@ -1,5 +1,4 @@
 const { db } = require("../utils/admin");
-const UserHandle = require("../models/userHandle.model.js");
 
 const createUser = (req, res) => {
   console.log("in createUser()");

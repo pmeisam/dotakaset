@@ -15,7 +15,6 @@ const getUserByEntityId = (userEntityId) => {
 };
 
 const createUserEntity = (form) => {
-  console.log(form);
   return fetch(`${BASE_URL}/`, {
     method: "POST",
     headers: new Headers({ "Content-Type": "application/json" }),

@@ -33,8 +33,12 @@ export default function Dashboard() {
   return (
     <DashboardWrapper>
       <h1>Hello {currentUser.email}</h1>
-      <button onClick={handleLogout}>Log out</button>
+      <br />
+      <Link to="/upload">Upload a song</Link>
+      <br />
       <Link to="/subscriptions">Update Subscription</Link>
+      <br />
+      <button onClick={handleLogout}>Log out</button>
     </DashboardWrapper>
   );
 }

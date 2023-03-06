@@ -38,3 +38,6 @@ export function PayPalBtn(props) {
 }
 
 export default PayPalBtn;
+
+
+// https://medium.com/analytics-vidhya/paypal-subscription-in-react-1121c39b26be
