@@ -12,15 +12,29 @@ export default function Footer() {
 
   return (
     <FooterWrapper>
-      <div className="container">
-        <p>Your account</p>
-        <Link to="/account">Account overview</Link>
+      <h1>LOGO</h1>
+      <div className="link_container">
+        <Link className="link" to="/account">
+          Account Overview
+        </Link>
+        <Link className="link" to="/dashboard">
+          Dashboard
+        </Link>
+        <Link className="link" to="/subscriptions">
+          Subscriptions
+        </Link>
+        <Link className="link" to="/about">
+          About Us
+        </Link>
+        <Link className="link" to="/support">
+          Support
+        </Link>
       </div>
       <div className="footer-copy-right">
         ©{year && year} DotaKaset. Website provided by{" "}
         <a
-          className="peepbox"
-          href="https://meisampoorzand.com"
+          className="peepbox_link"
+          href="https://www.meisam.dev"
           target="_blank"
           rel="noreferrer"
         >
@@ -32,18 +46,15 @@ export default function Footer() {
 }
 
 const FooterWrapper = styled.footer`
-  background: #111;
+  background: #2f2d2e;
   color: #fff;
   padding: 1.25rem 0 0;
   text-align: left;
-  min-height: 200px;
-  position: relative;
+  min-height: 250px;
+  position: fixed;
   bottom: 0;
-  right: 0;
   left: 0;
-
-  .container {
-  }
+  width: 100%;
 
   .footer-copy-right {
     background: #000;
@@ -54,5 +65,38 @@ const FooterWrapper = styled.footer`
     width: 100vw;
     position: absolute;
     bottom: 0;
+  }
+
+  .link {
+    text-decoration: none;
+    display: block;
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #f5f5f5;
+    font-weight: 400;
+  }
+
+  .peepbox_link {
+    color: white;
+    font-weight: 700;
+  }
+
+  .link:hover,
+  .peepbox_link:hover {
+    color: #f15156;
+  }
+
+  .link_container {
+    width: 30%;
+    margin-left: auto;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .link_container {
+      text-align: center;
+      width: 100%;
+      margin: 0;
+    }
   }
 `;
