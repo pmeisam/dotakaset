@@ -57,17 +57,17 @@ export default function Subscriptions() {
 
 const Wrapper = styled.div`
   .section-pick-plan_title {
-    font-size: 2.5rem;
-    margin-bottom: 2.1875rem;
-    text-align: center;
     font-family: Poppins, Helvetica, Arial, sans-serif;
+    font-size: 2.5rem;
+    text-align: center;
     line-height: 1.4;
     letter-spacing: 0.15rem;
+    margin-bottom: 2.1875rem;
+    margin-top: 2.1875rem;
   }
 
   .plan_list_items {
     display: flex;
-
     position: relative;
     width: 100%;
     padding-right: 15px;

@@ -62,7 +62,7 @@ const FooterWrapper = styled.footer`
     padding-bottom: 13px;
     padding-top: 13px;
     text-align: center;
-    width: 100vw;
+    width: 100%;
     position: absolute;
     bottom: 0;
   }

@@ -12,7 +12,102 @@ import Music from "../components/SVGs/Music";
 export default function HomePage() {
   return (
     <Wrapper>
-      <div className="video-container">
+     <div className="home_content-background">
+      <h1 className="home_content-title">Take your music <br />to the next level<br /> with DotaKaset</h1>
+     </div>
+    </Wrapper>
+  );
+}
+
+const Wrapper = styled.div`
+  .home_content-background {
+    background-image: url('./images/home_page_bg.jpg');
+    background-size: cover;
+    width: 100%;
+    height: 56rem;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+  }
+  .home_content-title {
+    color: white;
+    margin: 50px;
+  }
+`;
+
+/*const Wrapper = styled.div`
+  .video-container {
+    min-height: calc(100vh - 400px);
+  }
+  .section-hero-banner__container {
+    position: relative;
+    z-index: 2;
+    max-width: 1580px;
+    padding-top: 17.25rem;
+    padding-bottom: 13.25rem;
+    color: white;
+  }
+  video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 0;
+    width: auto;
+    min-width: 100%;
+    height: auto;
+    min-height: 100%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+
+  .section-stores {
+    width: 100%;
+    min-height: 15.25rem;
+    background: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .store-image {
+    width: 100px;
+    margin: 40px;
+  }
+
+  .home-content {
+    width: 100%;
+    background-color: white;
+    padding-top: 1.875rem;
+    padding-bottom: 6.25rem;
+    z-index: 2;
+    position: absolute;
+  }
+
+  .text-card {
+    width: 500px;
+    margin: 100px;
+  }
+`;
+
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ {/* <div className="video-container">
         <div className="section-hero-banner__container">
           <div>
             <div
@@ -132,62 +227,4 @@ export default function HomePage() {
           </div>
           <Music />
         </div>
-      </div>
-    </Wrapper>
-  );
-}
-
-const Wrapper = styled.div`
-  .video-container {
-    min-height: calc(100vh - 400px);
-  }
-  .section-hero-banner__container {
-    position: relative;
-    z-index: 2;
-    max-width: 1580px;
-    padding-top: 17.25rem;
-    padding-bottom: 13.25rem;
-    color: white;
-  }
-  video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    z-index: 0;
-    width: auto;
-    min-width: 100%;
-    height: auto;
-    min-height: 100%;
-    transform: translateX(-50%) translateY(-50%);
-  }
-
-  .section-stores {
-    width: 100%;
-    min-height: 15.25rem;
-    background: white;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    align-items: center;
-  }
-
-  .store-image {
-    width: 100px;
-    margin: 40px;
-  }
-
-  .home-content {
-    width: 100%;
-    background-color: white;
-    padding-top: 1.875rem;
-    padding-bottom: 6.25rem;
-    z-index: 2;
-    position: absolute;
-  }
-
-  .text-card {
-    width: 500px;
-    margin: 100px;
-  }
-`;
+      </div> */}

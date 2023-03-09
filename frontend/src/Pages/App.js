@@ -12,7 +12,6 @@ import Login from "../components/Login";
 import PrivateRoute from "../components/PrivateRoute";
 import ForgotPassword from "../components/ForgotPassword";
 import UpdateProfile from "../components/UpdateProfile";
-import Navbar from "../components/Navbar";
 import HomePage from "./HomePage";
 import Footer from "../components/Footer";
 import Account from "../components/Account";
@@ -21,6 +20,9 @@ import VerifyEmail from "../components/VerifyEmail";
 import TestPage from "./TestPage";
 import Upload from "./Upload";
 import Checkout from "./Checkout";
+import Navbar from "../components/Navbar/Navbar";
+import About from "./About";
+import Support from "./Support";
 
 function App() {
   const { currentUser } = useAuth();
@@ -62,6 +64,8 @@ function App() {
             <Route path="/signup" element={<Signup />} />
             <Route path="/login" element={<Login />} />
             <Route path="/forgot-password" element={<ForgotPassword />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/support" element={<Support />} />
           </Routes>
           <Footer />
         </AuthProvider>

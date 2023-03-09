@@ -19,7 +19,7 @@ function Paypal({ amount, planId }) {
   return (
     <div className="App">
       <PayPalBtn
-        amount
+        amount={amount}
         currency="USD"
         createSubscription={paypalSubscribe}
         onApprove={paypalOnApprove}
