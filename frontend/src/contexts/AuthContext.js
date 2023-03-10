@@ -2,7 +2,6 @@ import React, { useContext, useState, useEffect } from "react";
 import UserServices from "../services/UserServices";
 import { auth } from "../firebase";
 
-
 const AuthContext = React.createContext();
 
 export function useAuth() {
@@ -50,8 +49,10 @@ export function AuthProvider({ children }) {
   function fetchData() {
     const unsubscribe = auth.onAuthStateChanged(async (user) => {
       setCurrentUser(user);
-      let userEn = await UserServices.getUserByEntityId(user.uid);
-      setUserEntity(userEn);
+      if (user) {
+        let userEn = await UserServices.getUserByEntityId(user.uid);
+        setUserEntity(userEn);
+      }
       setLoading(false);
     });
 

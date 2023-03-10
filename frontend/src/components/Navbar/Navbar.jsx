@@ -1,19 +1,34 @@
 import React, { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { useNavigate, NavLink, Link } from "react-router-dom";
 import menuItems from "./MenuItems";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faX } from "@fortawesome/free-solid-svg-icons";
+import { useAuth } from "../../contexts/AuthContext";
 
 export default function Navbar() {
+  const navigate = useNavigate();
+  const { currentUser, userEntity, logout } = useAuth();
   const [active, setActive] = useState(false);
+  const [error, setError] = useState(null);
 
-  const handleClick = () => {
+  function handleClick() {
     setActive(!active);
-  };
+  }
+
+  async function handleLogout() {
+    setError("");
+
+    try {
+      await logout();
+      navigate("/login");
+    } catch {
+      setError("Failed to log out");
+    }
+  }
 
   let activeStyle = {
-    color: "#5934e8"
+    color: "#5934e8",
   };
 
   return (
@@ -37,6 +52,44 @@ export default function Navbar() {
               </li>
             );
           })}
+
+          {currentUser ? (
+            <>
+              <li>
+                <NavLink
+                  className="nav-links"
+                  style={({ isActive }) => (isActive ? activeStyle : undefined)}
+                  to="/dashboard"
+                >
+                  Dashboard
+                </NavLink>
+              </li>
+              <li>
+                <button className="nav-links" onClick={handleLogout}>Log out</button>
+              </li>
+            </>
+          ) : (
+            <>
+              <li>
+                <NavLink
+                  className="nav-links"
+                  style={({ isActive }) => (isActive ? activeStyle : undefined)}
+                  to="/login"
+                >
+                  Login
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  className="nav-links"
+                  style={({ isActive }) => (isActive ? activeStyle : undefined)}
+                  to="/signup"
+                >
+                  Join Now
+                </NavLink>
+              </li>
+            </>
+          )}
         </ul>
       </nav>
     </Wrapper>
@@ -74,11 +127,16 @@ const Wrapper = styled.header`
     justify-content: end;
     margin-right: 2rem;
   }
+  li {
+    display: flex;
+  }
 
   .nav-links {
     color: black;
     text-decoration: none;
     padding: 0.5rem 1rem;
+    border: none;
+    background-color: transparent;
   }
 
   .nav-links:hover {

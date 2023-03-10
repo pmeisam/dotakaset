@@ -14,11 +14,11 @@ const menuItems = [
     url: "/support",
     cName: "nav-links",
   },
-  {
-    title: "Dashboard",
-    url: "/dashboard",
-    cName: "nav-links",
-  },
+//   {
+//     title: "Dashboard",
+//     url: "/dashboard",
+//     cName: "nav-links",
+//   },
 ];
 
 export default menuItems;

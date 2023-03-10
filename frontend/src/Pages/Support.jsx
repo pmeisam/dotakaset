@@ -13,23 +13,12 @@ export default function Support() {
       </form>
       <div className="vertical-hr"></div>
       <p>
-        Welcome to our support page! We're here to assist you with any questions
-        you may have about our music publishing services. Our team of experts is
-        committed to providing exceptional customer service and will be happy to
-        assist you in any way we can. If you have any inquiries about our
-        platform, distribution services, or promotional offerings, please feel
-        free to contact us. Our team is available to answer your questions and
-        provide you with the information you need to get your music on major
-        streaming platforms like YouTube and Spotify. We understand that every
-        artist has unique needs and we're here to help you achieve your goals.
-        Whether you're just starting out or have an established career, we have
-        the expertise to help you succeed. Our team is dedicated to providing
-        you with personalized service and support to ensure that your music
-        reaches a global audience. To get in touch with us, simply fill out the
-        contact form on this page and one of our representatives will respond to
-        your inquiry as soon as possible. Thank you for considering our music
-        publishing platform. We look forward to hearing from you and helping you
-        take your music career to the next level!
+        Thank you for considering our music publishing platform DotaKaset. For inquiries
+        about our distribution services, promotional offerings, or general
+        questions, please contact us via the form on this page.
+        Our team of experts is dedicated to providing exceptional customer
+        service and personalized support to help you achieve your music career
+        goals. We look forward to hearing from you.
       </p>
     </SupportWrapper>
   );
@@ -44,6 +33,7 @@ const SupportWrapper = styled.div`
   p {
     width: 40%;
     margin: 30px;
+    text-align: center;
   }
   .vertical-hr {
     // margin-top: -8px;

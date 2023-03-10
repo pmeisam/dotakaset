@@ -6,7 +6,6 @@ import styled from "styled-components";
 export default function Dashboard() {
   const navigate = useNavigate();
   const { currentUser, userEntity, logout } = useAuth();
-  const [error, setError] = useState("");
   const [contentList, setContentList] = useState([
     {
       name: "test 1",
@@ -52,16 +51,7 @@ export default function Dashboard() {
     },
   ]);
 
-  async function handleLogout() {
-    setError("");
-
-    try {
-      await logout();
-      navigate("/login");
-    } catch {
-      setError("Failed to log out");
-    }
-  }
+  
 
   useEffect(() => {
     if (!currentUser.emailVerified) {
@@ -94,7 +84,7 @@ export default function Dashboard() {
             status: {c.status}
           </Link>
         ))}
-      {/* <button onClick={handleLogout}>Log out</button> */}
+     
     </DashboardWrapper>
   );
 }
