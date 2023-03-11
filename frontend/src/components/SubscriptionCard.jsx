@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-export default function SubscriptionCard({ planName, price, details, planId }) {
+export default function SubscriptionCard({ planName, price, details, planId, paypalKey }) {
   return (
     <CardWrapper>
       <div className="plan_card">

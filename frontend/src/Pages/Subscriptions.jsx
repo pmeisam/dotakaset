@@ -16,7 +16,7 @@ export default function Subscriptions() {
           and have them distributed to 
           popular streaming platforms like YouTube, Spotify, 
           Apple Music, Amazon Music, and SoundCloud."
-          planId="P-49690677HG9807049MQBJBIY"
+          planId="P-04Y63651XD7465802MQGER2Q"
         />
         <SubscriptionCard
           planName="Gold"
@@ -25,7 +25,7 @@ export default function Subscriptions() {
           and have them distributed to 
           popular streaming platforms like YouTube, Spotify, 
           Apple Music, Amazon Music, and SoundCloud."
-          planId="P-49690677HG9807049MQBJBIY"
+          planId='P-2A0850199B392714UMQGEUDA'
         />
         <SubscriptionCard
           planName="Platinum"

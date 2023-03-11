@@ -24,7 +24,18 @@ const createUserEntity = (form) => {
   });
 };
 
+const updateUserSubscription = (form) => {
+  return fetch(`${BASE_URL}/`, {
+    method: "PUT",
+    headers: new Headers({ "Content-Type": "application/json" }),
+    body: JSON.stringify(form),
+  }).then((res) => {
+    if (res.status !== 500) return res.json().then((data) => data);
+  });
+};
+
 export default {
   getUserByEntityId,
   createUserEntity,
+  updateUserSubscription
 };
